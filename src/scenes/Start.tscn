@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/assets/Fonts/Luna.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/assets/GUI/Butterfly_UI.png" type="Texture" id=2]
 [ext_resource path="res://src/scripts/Start.gd" type="Script" id=3]
+[ext_resource path="res://src/assets/GUI/Buttons/Hover_button.png" type="Texture" id=4]
+[ext_resource path="res://src/assets/GUI/Buttons/Normal_button.png" type="Texture" id=5]
+[ext_resource path="res://src/assets/GUI/Buttons/Click_button.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 48
+size = 50
 font_data = ExtResource( 1 )
 
 [node name="Start" type="Control"]
@@ -27,50 +30,102 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -385.0
-margin_top = -285.5
-margin_right = 385.0
-margin_bottom = 285.5
+margin_left = -470.0
+margin_top = -350.0
+margin_right = 470.0
+margin_bottom = 350.0
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Poppy\'s Dreams" type="Label" parent="ColorRect/VBoxContainer"]
-margin_right = 770.0
+[node name="TitleLabel" type="Label" parent="VBoxContainer"]
+margin_right = 940.0
 margin_bottom = 232.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Poppy's Dreams"
+text = "The Poppy's Tale"
+align = 1
 
-[node name="PlayButton" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
 margin_top = 252.0
-margin_right = 770.0
-margin_bottom = 345.0
+margin_right = 940.0
+margin_bottom = 388.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="VBoxContainer/PlayButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -42.5
+margin_top = -53.0
+margin_right = 42.5
+margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Play"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HowToPlayButton" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 365.0
-margin_right = 770.0
-margin_bottom = 458.0
+[node name="HowToPlayButton" type="TextureButton" parent="VBoxContainer"]
+margin_top = 408.0
+margin_right = 940.0
+margin_bottom = 544.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HowToPlayButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -134.5
+margin_top = -53.0
+margin_right = 134.5
+margin_bottom = 38.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "How to Play"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="QuitButton" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 478.0
-margin_right = 770.0
-margin_bottom = 571.0
+[node name="QuitButton" type="TextureButton" parent="VBoxContainer"]
+margin_top = 564.0
+margin_right = 940.0
+margin_bottom = 700.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="VBoxContainer/QuitButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -43.5
+margin_top = -45.5
+margin_right = 43.5
+margin_bottom = 45.5
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quit"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Butterflies" type="Node" parent="."]
 
@@ -97,6 +152,6 @@ texture = ExtResource( 2 )
 [node name="Butterfly_UI6" type="Sprite" parent="Butterflies"]
 position = Vector2( 1751.02, 942.606 )
 texture = ExtResource( 2 )
-[connection signal="pressed" from="ColorRect/VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
