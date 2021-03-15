@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/assets/Fonts/Luna.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/assets/GUI/Butterfly_UI.png" type="Texture" id=2]
+[ext_resource path="res://src/scripts/GameOver.gd" type="Script" id=3]
+[ext_resource path="res://src/assets/SFX/horror-go.ogg" type="AudioStream" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 1 )
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.5
+margin_top = -229.0
+margin_right = 300.5
+margin_bottom = 229.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabel" type="Label" parent="ColorRect/VBoxContainer"]
+margin_right = 601.0
+margin_bottom = 232.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Game Over"
+align = 1
+
+[node name="PlayAgainButton" type="Button" parent="ColorRect/VBoxContainer"]
+margin_top = 252.0
+margin_right = 601.0
+margin_bottom = 345.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+text = "Play Again"
+
+[node name="QuitButton" type="Button" parent="ColorRect/VBoxContainer"]
+margin_top = 365.0
+margin_right = 601.0
+margin_bottom = 458.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+text = "Quit"
+
+[node name="Butterflies" type="Node" parent="."]
+
+[node name="Butterfly_UI" type="Sprite" parent="Butterflies"]
+position = Vector2( 127.019, 132.606 )
+texture = ExtResource( 2 )
+
+[node name="Butterfly_UI2" type="Sprite" parent="Butterflies"]
+position = Vector2( 267.019, 936.606 )
+texture = ExtResource( 2 )
+
+[node name="Butterfly_UI3" type="Sprite" parent="Butterflies"]
+position = Vector2( 1621.02, 84.6057 )
+texture = ExtResource( 2 )
+
+[node name="Butterfly_UI4" type="Sprite" parent="Butterflies"]
+position = Vector2( 1519.02, 678.606 )
+texture = ExtResource( 2 )
+
+[node name="Butterfly_UI5" type="Sprite" parent="Butterflies"]
+position = Vector2( 1751.02, 942.606 )
+texture = ExtResource( 2 )
+
+[node name="Butterfly_UI6" type="Sprite" parent="Butterflies"]
+position = Vector2( 1751.02, 942.606 )
+texture = ExtResource( 2 )
+
+[node name="GameOverSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 5.0
+autoplay = true
+[connection signal="pressed" from="ColorRect/VBoxContainer/PlayAgainButton" to="." method="_on_PlayAgainButton_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

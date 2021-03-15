@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/assets/Butterfly/Butterfly0000.png" type="Texture" id=1]
+[ext_resource path="res://src/assets/Butterfly/Butterfly0001.png" type="Texture" id=2]
+[ext_resource path="res://src/assets/Butterfly/Butterfly0002.png" type="Texture" id=3]
+[ext_resource path="res://src/assets/Butterfly/Butterfly0003.png" type="Texture" id=4]
+[ext_resource path="res://src/assets/Butterfly/Butterfly0004.png" type="Texture" id=5]
+[ext_resource path="res://src/assets/SFX/coin_pickup.wav" type="AudioStream" id=6]
+[ext_resource path="res://src/scripts/Butterfly.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "fly",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19.2668, 23.9446 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "pickup"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 0.2, 0.2 ), Vector2( 0.01, 0.01 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "pick_up"
+} ]
+}
+
+[node name="Butterfly" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 1 )
+animation = "fly"
+frame = 4
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( -0.379974, -11.0804 )
+shape = SubResource( 2 )
+
+[node name="PickUpSFX" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource( 6 )
+volume_db = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+anims/pickup = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

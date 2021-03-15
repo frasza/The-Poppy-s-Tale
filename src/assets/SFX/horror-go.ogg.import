@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/horror-go.ogg-c0b10ccb16009634eb6eb47042075f4c.oggstr"
+
+[deps]
+
+source_file="res://src/assets/SFX/horror-go.ogg"
+dest_files=[ "res://.import/horror-go.ogg-c0b10ccb16009634eb6eb47042075f4c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
