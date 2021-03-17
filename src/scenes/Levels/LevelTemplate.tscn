@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Portal.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/assets/SFX/horror-go.ogg" type="AudioStream" id=5]
 [ext_resource path="res://src/tiles/GroundTiles.tres" type="TileSet" id=6]
 [ext_resource path="res://src/tiles/SkyTiles.tres" type="TileSet" id=7]
+[ext_resource path="res://src/scenes/WorldLimit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/scenes/PauseScene.tscn" type="PackedScene" id=9]
 
 [node name="LevelTemplate" type="Node2D"]
 script = ExtResource( 1 )
@@ -39,6 +41,8 @@ tile_data = PoolIntArray( 655360, 7, 0, 655361, 13, 0, 655362, 12, 0, 655363, 13
 
 [node name="Thorns" type="Node" parent="."]
 
+[node name="Flowers" type="Node" parent="."]
+
 [node name="Jumpers" type="Node" parent="."]
 
 [node name="Enemies" type="Node" parent="."]
@@ -47,9 +51,15 @@ tile_data = PoolIntArray( 655360, 7, 0, 655361, 13, 0, 655362, 12, 0, 655363, 13
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 701.765, 835.297 )
+next_scene = null
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
 position = Vector2( 303.63, 889.154 )
 z_index = 100
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[node name="WorldLimit" parent="." instance=ExtResource( 8 )]
+position = Vector2( -57.082, 2654.31 )
+
+[node name="PauseScene" parent="." instance=ExtResource( 9 )]

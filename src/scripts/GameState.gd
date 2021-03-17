@@ -1,11 +1,15 @@
 extends Node2D
 
 var target_number_of_butterflies: int = 10
+var original_player_position: Vector2
+
+onready var character: KinematicBody2D = get_node("Character")
 
 
 func _ready() -> void:
 	add_to_group("gamestate")
 	update_gui()
+	original_player_position = character.get_position()
 
 
 func update_gui():
@@ -14,7 +18,7 @@ func update_gui():
 
 func hurt(world_limit: bool = false):
 	if not world_limit:
-		$Character.hurt()
+		character.hurt()
 		life_down(1)
 	else:
 		life_down(1)
@@ -41,10 +45,20 @@ func life_down(time: float):
 		game_over(time)
 	else:
 		yield(get_tree().create_timer(time), "timeout") # Wait before scene reload
-		get_tree().reload_current_scene()
+		reset_character_to_start()
 
 
 func game_over(time: float):
 	yield(get_tree().create_timer(time), "timeout") # Wait before scene reload
 	get_tree().change_scene("res://src/scenes/GameOver.tscn")
 	Globals.game_reset()
+
+
+func reset_character_to_start():
+	character.set_position(original_player_position)
+	character.sprite.scale.x = 1
+	character.is_alive = true
+
+
+func _on_Button_pressed() -> void:
+	get_tree().paused = false

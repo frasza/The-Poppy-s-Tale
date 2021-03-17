@@ -11,7 +11,6 @@ extents = Vector2( 71.0621, 3.57323 )
 extents = Vector2( 78.5, 11.75 )
 
 [node name="Jumper" type="Node2D"]
-z_index = 200
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

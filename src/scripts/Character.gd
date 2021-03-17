@@ -11,7 +11,7 @@ var movement: Vector2 = Vector2.ZERO
 var is_alive: bool = true
 var is_attacking: bool = false
 
-onready var sprite: Sprite = $Sprite
+onready var sprite: Sprite = get_node("Sprite")
 onready var weapon: Position2D = sprite.get_node("Weapon")
 
 
@@ -56,7 +56,7 @@ func apply_gravity():
 
 func jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor() and is_alive:
-		is_attacking = false # Get Player out of attacking state
+		is_attacking = false
 		movement.y = -jump_force
 
 

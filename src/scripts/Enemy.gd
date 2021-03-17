@@ -10,12 +10,7 @@ func take_damage(damage: int):
 
 
 func die():
-	$MoanSFX.play()
 	queue_free()
-
-
-func play_moan_sfx():
-	$MoanSFX.play()
 
 
 func _on_Area2D_body_entered(body: Node) -> void:

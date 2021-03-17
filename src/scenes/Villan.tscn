@@ -3,7 +3,7 @@
 [ext_resource path="res://src/assets/Enemy/Villan_walking0001.png" type="Texture" id=1]
 [ext_resource path="res://src/assets/Enemy/Villan.png" type="Texture" id=2]
 [ext_resource path="res://src/assets/Enemy/Villan_walking0000.png" type="Texture" id=3]
-[ext_resource path="res://src/scripts/Enemy.gd" type="Script" id=4]
+[ext_resource path="res://src/scripts/Villan.gd" type="Script" id=4]
 [ext_resource path="res://src/assets/SFX/enemy_moan.wav" type="AudioStream" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -85,7 +85,6 @@ tracks/3/keys = {
 extents = Vector2( 62.347, 99.2697 )
 
 [node name="Enemy" type="Node2D"]
-z_index = 5
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision_layer = 8
