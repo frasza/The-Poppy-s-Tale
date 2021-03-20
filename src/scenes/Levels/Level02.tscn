@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://src/scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Portal.tscn" type="PackedScene" id=2]
@@ -26,8 +26,11 @@
 [ext_resource path="res://src/scenes/PauseScene.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/assets/Bushes/Green_bush.png" type="Texture" id=25]
 [ext_resource path="res://src/assets/Bushes/Green_bush_flowers.png" type="Texture" id=26]
+[ext_resource path="res://src/assets/Clouds/Cloud_7.png" type="Texture" id=27]
+[ext_resource path="res://src/assets/Trees/Blue tree.png" type="Texture" id=28]
+[ext_resource path="res://src/assets/Clouds/Cloud_6.png" type="Texture" id=29]
 
-[node name="Level01" type="Node2D"]
+[node name="Level02" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="SkyTiles" type="TileMap" parent="."]
@@ -180,6 +183,14 @@ texture = ExtResource( 18 )
 position = Vector2( 25788.2, 585.113 )
 texture = ExtResource( 18 )
 
+[node name="Cloud_34" type="Sprite" parent="Clouds"]
+position = Vector2( 27893.2, 669.865 )
+texture = ExtResource( 27 )
+
+[node name="Cloud_35" type="Sprite" parent="Clouds"]
+position = Vector2( 28405.6, -49.3227 )
+texture = ExtResource( 29 )
+
 [node name="Trees" type="Node" parent="."]
 
 [node name="Pink tree" type="Sprite" parent="Trees"]
@@ -193,8 +204,9 @@ scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 15 )
 
 [node name="Red tree" type="Sprite" parent="Trees"]
-position = Vector2( 1458.16, 611.762 )
-scale = Vector2( 0.8, 0.8 )
+position = Vector2( 1453.91, 657.956 )
+rotation = -0.0210799
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 13 )
 
 [node name="Red tree2" type="Sprite" parent="Trees"]
@@ -230,6 +242,11 @@ texture = ExtResource( 14 )
 [node name="Orange tree3" type="Sprite" parent="Trees"]
 position = Vector2( 26356.1, 1617.1 )
 texture = ExtResource( 14 )
+
+[node name="Blue tree" type="Sprite" parent="Trees"]
+position = Vector2( 28760.3, 860.096 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 28 )
 
 [node name="Bushes" type="Node" parent="."]
 
@@ -445,6 +462,11 @@ limit_bottom = 4000
 position = Vector2( 114.164, 3508.29 )
 
 [node name="PauseScene" parent="." instance=ExtResource( 24 )]
+
+[node name="Yellow_flowers" type="Sprite" parent="."]
+position = Vector2( 28433.7, 1565.65 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
 
 [editable path="Character"]
 
