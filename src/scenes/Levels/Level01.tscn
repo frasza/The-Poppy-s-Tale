@@ -570,5 +570,4 @@ position = Vector2( 114.164, 3508.29 )
 [node name="PauseScene" parent="." instance=ExtResource( 24 )]
 
 [editable path="Character"]
-
 [editable path="PauseScene"]

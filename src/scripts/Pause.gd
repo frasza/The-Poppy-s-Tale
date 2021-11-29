@@ -1,5 +1,7 @@
 extends Control
 
+func _ready():
+	$Settings.hide()
 
 func toggle_off_pause():
 	get_tree().paused = false
@@ -18,11 +20,10 @@ func _on_ResumeButton_pressed() -> void:
 
 
 func _on_SettingsButton_pressed() -> void:
-	get_tree().change_scene("res://src/scenes/Settings.tscn")
+	$Settings.show()
 
 
 func _on_BackButton_pressed() -> void:
-	toggle_off_pause()
 	get_tree().change_scene("res://src/scenes/Start.tscn")
 
 

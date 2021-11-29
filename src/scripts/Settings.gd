@@ -14,7 +14,10 @@ func _on_HSlider_value_changed(value: float) -> void:
 
 
 func _on_BackButton_pressed() -> void:
-	get_tree().change_scene("res://src/scenes/Start.tscn")
+	if get_tree().paused:
+		hide()
+	else:
+		get_tree().change_scene("res://src/scenes/Start.tscn")
 
 
 func _on_FullscreenCheckbox_toggled(button_pressed: bool) -> void:

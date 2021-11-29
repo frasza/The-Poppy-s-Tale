@@ -2,7 +2,8 @@ extends Control
 
 
 func _on_PlayButton_pressed() -> void:
-	get_tree().change_scene("res://src/scenes/Levels/Level01.tscn")
+	Globals.game_reset()
+	get_tree().change_scene("res://src/scenes/InBedScene.tscn")
 
 
 func _on_HowToPlayButton_pressed() -> void:

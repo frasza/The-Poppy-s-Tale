@@ -15,11 +15,11 @@ font_data = ExtResource( 1 )
 size = 50
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=6]
-
 [sub_resource type="DynamicFont" id=5]
 size = 50
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=6]
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
@@ -60,8 +60,8 @@ __meta__ = {
 [node name="TitleLabel" type="Label" parent="TextureRect/VBoxContainer"]
 margin_right = 940.0
 margin_bottom = 232.0
-custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
 text = "Settings"
 align = 1
 
@@ -78,8 +78,8 @@ margin_bottom = 111.0
 [node name="VolumeLabel" type="Label" parent="TextureRect/VBoxContainer/VBoxContainer/VBoxContainer"]
 margin_right = 940.0
 margin_bottom = 91.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "Music Volume"
 
 [node name="HSlider" type="HSlider" parent="TextureRect/VBoxContainer/VBoxContainer/VBoxContainer"]
@@ -103,10 +103,10 @@ custom_constants/separation = 100
 margin_right = 226.0
 margin_bottom = 91.0
 focus_mode = 0
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_constants/check_vadjust = 0
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 enabled_focus_mode = 0
 text = "Fullscreen"
 
@@ -127,13 +127,14 @@ margin_left = -50.0
 margin_top = -53.0
 margin_right = 50.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Back"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="value_changed" from="TextureRect/VBoxContainer/VBoxContainer/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="toggled" from="TextureRect/VBoxContainer/VBoxContainer/VBoxContainer2/FullscreenCheckbox" to="." method="_on_FullscreenCheckbox_toggled"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

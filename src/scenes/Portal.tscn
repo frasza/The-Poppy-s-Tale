@@ -76,8 +76,8 @@ tracks/1/keys = {
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-monitorable = false
 collision_layer = 0
+monitorable = false
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
 texture = ExtResource( 1 )
@@ -105,4 +105,5 @@ __meta__ = {
 autoplay = "START"
 anims/START = SubResource( 3 )
 anims/fade_out = SubResource( 4 )
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
