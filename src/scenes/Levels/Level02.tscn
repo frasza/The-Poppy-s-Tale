@@ -373,6 +373,11 @@ position = Vector2( 25585.9, 1538.76 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 23 )
 
+[node name="Yellow_flowers4" type="Sprite" parent="Flowers"]
+position = Vector2( 28433.7, 1565.65 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
 [node name="Jumpers" type="Node" parent="."]
 
 [node name="Jumper" parent="Jumpers" instance=ExtResource( 8 )]
@@ -450,13 +455,7 @@ position = Vector2( 29427.7, 631.948 )
 next_scene = ExtResource( 30 )
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
-position = Vector2( 190.975, 889.154 )
-z_index = 100
-
-[node name="Camera2D" parent="Character" index="0"]
-current = false
-limit_right = 30000
-limit_bottom = 4000
+position = Vector2( 176, 889 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
 
@@ -465,10 +464,4 @@ position = Vector2( 114.164, 3508.29 )
 
 [node name="PauseScene" parent="." instance=ExtResource( 24 )]
 
-[node name="Yellow_flowers" type="Sprite" parent="."]
-position = Vector2( 28433.7, 1565.65 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 16 )
-
-[editable path="Character"]
 [editable path="PauseScene"]

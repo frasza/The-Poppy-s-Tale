@@ -556,7 +556,6 @@ next_scene = ExtResource( 27 )
 
 [node name="Character" parent="." instance=ExtResource( 4 )]
 position = Vector2( 190.975, 889.154 )
-z_index = 100
 
 [node name="Camera2D" parent="Character" index="0"]
 limit_right = 30000
