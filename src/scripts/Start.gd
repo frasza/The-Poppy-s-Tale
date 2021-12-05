@@ -1,8 +1,12 @@
 extends Control
 
+onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _on_PlayButton_pressed() -> void:
 	Globals.game_reset()
+	animation_player.play("fade_out")
+	yield(animation_player, "animation_finished")
 	get_tree().change_scene("res://src/scenes/InBedScene.tscn")
 
 

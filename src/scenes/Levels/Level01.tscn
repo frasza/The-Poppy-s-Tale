@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://src/scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://src/scenes/Portal.tscn" type="PackedScene" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://src/assets/Trees/Pink tree.png" type="Texture" id=25]
 [ext_resource path="res://src/assets/Trees/Red tree.png" type="Texture" id=26]
 [ext_resource path="res://src/scenes/Levels/Level02.tscn" type="PackedScene" id=27]
+[ext_resource path="res://src/scenes/MovingPlatform.tscn" type="PackedScene" id=28]
 
 [node name="Level01" type="Node2D"]
 script = ExtResource( 1 )
@@ -568,6 +569,9 @@ limit_bottom = 4000
 position = Vector2( 114.164, 3508.29 )
 
 [node name="PauseScene" parent="." instance=ExtResource( 24 )]
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 28 )]
+position = Vector2( 1128, 640 )
 
 [editable path="Character"]
 [editable path="PauseScene"]

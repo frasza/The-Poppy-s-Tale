@@ -30,3 +30,7 @@ func _on_BackButton_pressed() -> void:
 
 func _on_QuitButton_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_MuteCheckbox_toggled(button_pressed):
+	MusicPlayer.toggle_music_playing()

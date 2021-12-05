@@ -16,7 +16,7 @@
 [ext_resource path="res://src/assets/Character/Die/Die0001.png" type="Texture" id=14]
 [ext_resource path="res://src/assets/Character/Die/Die0000.png" type="Texture" id=15]
 [ext_resource path="res://src/assets/Character/Die/Die0002.png" type="Texture" id=16]
-[ext_resource path="res://src/assets/Character/Attack/Attack0000.png" type="Texture" id=17]
+[ext_resource path="res://src/assets/Character/Attack/Attack0005.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "die"
@@ -107,6 +107,7 @@ script = ExtResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 2, 2 )
+process_mode = 0
 limit_left = 0
 smoothing_enabled = true
 smoothing_speed = 10.0
@@ -127,4 +128,5 @@ anims/walk_attack = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 5 )
+
 [connection signal="animate" from="." to="AnimationPlayer" method="_on_Character_animate"]

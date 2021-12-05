@@ -40,7 +40,9 @@ func move():
 	if direction.x != 0 and is_alive:
 		sprite.scale.x = 1 if direction.x > 0 else -1
 	
-	movement = move_and_slide(movement, Vector2.UP)
+	var snap = Vector2.DOWN * 16 if is_on_floor() else Vector2.ZERO # Stick to moving platform
+	
+	movement = move_and_slide_with_snap(movement, snap, Vector2.UP) # Use with_snap for moving plats
 
 
 func get_direction():

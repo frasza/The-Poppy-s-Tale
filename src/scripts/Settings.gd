@@ -22,3 +22,7 @@ func _on_BackButton_pressed() -> void:
 
 func _on_FullscreenCheckbox_toggled(button_pressed: bool) -> void:
 	OS.window_fullscreen = !OS.window_fullscreen
+
+
+func _on_MuteCheckbox_toggled(button_pressed):
+	MusicPlayer.toggle_music_playing()

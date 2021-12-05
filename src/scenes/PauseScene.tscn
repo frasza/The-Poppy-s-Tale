@@ -226,7 +226,7 @@ align = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="Control2/Settings/TextureRect/VBoxContainer"]
 margin_top = 252.0
 margin_right = 940.0
-margin_bottom = 690.0
+margin_bottom = 831.0
 custom_constants/separation = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer"]
@@ -251,13 +251,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer2" type="HBoxContainer" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer"]
 margin_top = 161.0
 margin_right = 940.0
 margin_bottom = 252.0
 custom_constants/separation = 100
 
-[node name="FullscreenCheckbox" type="CheckBox" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/VBoxContainer2"]
+[node name="MuteCheckbox" type="CheckBox" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 271.0
+margin_bottom = 91.0
+focus_mode = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/check_vadjust = 0
+custom_fonts/font = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+enabled_focus_mode = 0
+text = "Mute Music"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer"]
+margin_top = 302.0
+margin_right = 940.0
+margin_bottom = 393.0
+custom_constants/separation = 100
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 226.0
 margin_bottom = 91.0
 focus_mode = 0
@@ -269,9 +286,9 @@ enabled_focus_mode = 0
 text = "Fullscreen"
 
 [node name="BackButton" type="TextureButton" parent="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer"]
-margin_top = 302.0
+margin_top = 443.0
 margin_right = 940.0
-margin_bottom = 438.0
+margin_bottom = 579.0
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 4 )
@@ -298,5 +315,6 @@ __meta__ = {
 [connection signal="pressed" from="Control2/Control/ColorRect/VBoxContainer/BackButton" to="Control2" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Control2/Control/ColorRect/VBoxContainer/QuitButton" to="Control2" method="_on_QuitButton_pressed"]
 [connection signal="value_changed" from="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/VBoxContainer/HSlider" to="Control2/Settings" method="_on_HSlider_value_changed"]
-[connection signal="toggled" from="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/VBoxContainer2/FullscreenCheckbox" to="Control2/Settings" method="_on_FullscreenCheckbox_toggled"]
+[connection signal="toggled" from="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/HBoxContainer3/MuteCheckbox" to="Control2" method="_on_MuteCheckbox_toggled"]
+[connection signal="toggled" from="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/HBoxContainer2/FullscreenCheckbox" to="Control2/Settings" method="_on_FullscreenCheckbox_toggled"]
 [connection signal="pressed" from="Control2/Settings/TextureRect/VBoxContainer/VBoxContainer/BackButton" to="Control2/Settings" method="_on_BackButton_pressed"]
