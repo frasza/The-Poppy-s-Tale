@@ -247,7 +247,7 @@ position = Vector2( 13354, 963 )
 texture = ExtResource( 22 )
 
 [node name="GreenBush5" type="Sprite" parent="Bushes"]
-position = Vector2( 15384, 2867 )
+position = Vector2( 15384, 2868 )
 texture = ExtResource( 15 )
 
 [node name="GreenBush6" type="Sprite" parent="Bushes"]
@@ -396,10 +396,10 @@ texture = ExtResource( 13 )
 [node name="Jumpers" type="Node" parent="."]
 
 [node name="Jumper" parent="Jumpers" instance=ExtResource( 8 )]
-position = Vector2( 936, 1060 )
+position = Vector2( 936, 1063 )
 
 [node name="Jumper2" parent="Jumpers" instance=ExtResource( 8 )]
-position = Vector2( 1382, 260 )
+position = Vector2( 1382, 261 )
 
 [node name="Jumper3" parent="Jumpers" instance=ExtResource( 8 )]
 position = Vector2( 5801, 561 )
@@ -408,10 +408,10 @@ position = Vector2( 5801, 561 )
 position = Vector2( 4752, 1160 )
 
 [node name="Jumper7" parent="Jumpers" instance=ExtResource( 8 )]
-position = Vector2( 12319, 1960 )
+position = Vector2( 12319, 1965 )
 
 [node name="Jumper8" parent="Jumpers" instance=ExtResource( 8 )]
-position = Vector2( 12824, 1461 )
+position = Vector2( 12824, 1464 )
 
 [node name="Jumper9" parent="Jumpers" instance=ExtResource( 8 )]
 position = Vector2( 15809, 1264 )
@@ -426,7 +426,7 @@ position = Vector2( 18164, 2967 )
 position = Vector2( 7953, 459 )
 
 [node name="Jumper5" parent="Jumpers" instance=ExtResource( 8 )]
-position = Vector2( 8607, 1861 )
+position = Vector2( 8607, 1865 )
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -434,25 +434,25 @@ position = Vector2( 8607, 1861 )
 position = Vector2( 6693, -408 )
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 10856, 1893 )
+position = Vector2( 10856, 1900 )
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 16000, 2899 )
+position = Vector2( 16000, 2900 )
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 9 )]
 position = Vector2( 23188, 694 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 9 )]
-position = Vector2( 6358, 1793 )
+position = Vector2( 6358, 1797 )
 
 [node name="Monster" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 11303, 858 )
 
 [node name="Monster2" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 2298, 157 )
+position = Vector2( 2298, 160 )
 
 [node name="Monster3" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 14210, 958 )
+position = Vector2( 14210, 961 )
 
 [node name="Monster4" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 17756, 2864 )
@@ -549,6 +549,9 @@ position = Vector2( 190.975, 889.154 )
 [node name="Camera2D" parent="Character" index="0"]
 limit_right = 30000
 limit_bottom = 4000
+
+[node name="Sprite" parent="Character" index="1"]
+position = Vector2( 0, 3 )
 
 [node name="GUI" parent="." instance=ExtResource( 3 )]
 
